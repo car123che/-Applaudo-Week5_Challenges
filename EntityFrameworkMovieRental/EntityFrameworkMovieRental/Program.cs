@@ -48,11 +48,11 @@ namespace EntityFrameworkMovieRental
                 await Console.Out.WriteLineAsync(item.TagName + " | " + item.Title);
             }*/
 
-            var movies = await  GetMovieTagsByTag(7);
+            /*var movies = await  GetMovieTagsByTag(7);
             foreach (var item in movies)
             {
                 await Console.Out.WriteLineAsync(item.TagName + " | " + item.Title);
-            }
+            }*/
         }
 
         private static async Task QueryFilter()
