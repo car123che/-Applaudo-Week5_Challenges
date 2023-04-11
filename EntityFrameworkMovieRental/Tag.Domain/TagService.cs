@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using EFUnivestityRentalData;
 using Microsoft.EntityFrameworkCore;
+using Tag.Domain.Exceptions;
 
 namespace Tag.Domain
 {
@@ -28,6 +29,13 @@ namespace Tag.Domain
         public async Task<EFMovieRentalDomain.Tag> Get(int Id)
         {
             var tag = await context.Tags.FindAsync(Id);
+
+            if(tag is null)
+            {
+                throw new TagNotFoundException($"Tag Id: {Id} - not Found");
+            }
+
+
             return tag;
         }
         public async Task<EFMovieRentalDomain.Tag> Post(string Name)
@@ -42,6 +50,12 @@ namespace Tag.Domain
         public async Task<string> Delete(int Id)
         {
             var tag = await context.Tags.FindAsync(Id);
+
+            if (tag is null)
+            {
+                throw new TagNotFoundException($"Tag Id: {Id} - not Found");
+            }
+
             context.Tags.Remove(tag);
             await context.SaveChangesAsync();
 
@@ -50,6 +64,13 @@ namespace Tag.Domain
         public async Task<string> Update(int Id, string newName)
         {
             var tag = await context.Tags.FindAsync(Id);
+
+            if (tag is null)
+            {
+                throw new TagNotFoundException($"Tag Id: {Id} - not Found");
+            }
+
+
             tag.Name = newName;
             await context.SaveChangesAsync();
 

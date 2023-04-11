@@ -1,5 +1,6 @@
 using Movie.Domain;
 using MovieTag.Domain;
+using MoviRentalApi;
 using Tag.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -13,6 +14,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<ITagService, TagService>();
 builder.Services.AddTransient<IMovieService, MovieService>();
 builder.Services.AddTransient<IMovieTagService, MovieTagService>();
+builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
 var app = builder.Build();
 
@@ -28,5 +30,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.UseMiddleware<ExceptionHandlingMiddleware>();
 app.Run();
