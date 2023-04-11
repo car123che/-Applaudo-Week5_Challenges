@@ -1,15 +1,15 @@
 ﻿using EFUnivestityRentalData;
 using Microsoft.EntityFrameworkCore;
-using Movie.Domain.Exceptions;
+using MovieRental.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Movie.Domain
+namespace MovieRental.Domain
 {
-    public interface IMovieService
+    public interface IMovieRepository
     {
        
         Task<List<EFMovieRentalDomain.Movie>> Get();
@@ -19,7 +19,7 @@ namespace Movie.Domain
         Task<string> Update(int Id, EFMovieRentalDomain.Movie newMovie);
     }
 
-    public class MovieService : IMovieService
+    public class MovieRepository : IMovieRepository
     {
         private static MovieRentalContext context = new MovieRentalContext();
         public async Task<string> Delete(int Id)

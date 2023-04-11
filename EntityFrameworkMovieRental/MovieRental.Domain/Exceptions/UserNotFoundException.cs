@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tag.Domain.Exceptions
+namespace MovieRental.Domain.Exceptions
 {
-
-    public class TagNotFoundException : Exception
+    public class UserNotFoundException : Exception
     {
-        public TagNotFoundException(string message): base(message)
+        public UserNotFoundException(string message) : base(message)
         {
             
         }

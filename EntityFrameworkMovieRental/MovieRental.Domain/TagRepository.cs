@@ -5,11 +5,11 @@ using System.Text;
 using System.Threading.Tasks;
 using EFUnivestityRentalData;
 using Microsoft.EntityFrameworkCore;
-using Tag.Domain.Exceptions;
+using MovieRental.Domain.Exceptions;
 
-namespace Tag.Domain
+namespace MovieRental.Domain
 {
-    public interface ITagService
+    public interface ITagRepository
     {
         Task<EFMovieRentalDomain.Tag> Post(string Name);
         Task<List<EFMovieRentalDomain.Tag>> Get();
@@ -18,7 +18,7 @@ namespace Tag.Domain
         Task<string> Update(int Id, string newName);
     }
 
-    public class TagService : ITagService
+    public class TagRepository : ITagRepository
     {
         private static MovieRentalContext context = new MovieRentalContext();
         public async Task<List<EFMovieRentalDomain.Tag>> Get()

@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Movie.Domain;
+using MovieRental.Domain;
 using MoviRentalApi.Models;
 
 namespace MoviRentalApi.Controllers
@@ -9,9 +9,9 @@ namespace MoviRentalApi.Controllers
     public class MovieController : ControllerBase
     {
         private readonly ILogger<MovieController> _logger;
-        private readonly IMovieService _movieService;
+        private readonly IMovieRepository _movieService;
 
-        public MovieController(ILogger<MovieController> logger, IMovieService movieService)
+        public MovieController(ILogger<MovieController> logger, IMovieRepository movieService)
         {
             _logger = logger;
             _movieService = movieService;
