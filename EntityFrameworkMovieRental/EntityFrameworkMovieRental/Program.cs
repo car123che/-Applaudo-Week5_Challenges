@@ -110,7 +110,7 @@ namespace EntityFrameworkMovieRental
 
 
 
-        // Crear una pelicula
+        /*// Crear una pelicula
         static async Task AddMovie(Movie Movie)
         {
             await context.AddAsync(Movie);
@@ -152,7 +152,7 @@ namespace EntityFrameworkMovieRental
         {
             var movie = await context.Movies.FindAsync(Id);
             return movie;
-        }
+        }*/
 
 
         // Vincular una pelicula con un Tag

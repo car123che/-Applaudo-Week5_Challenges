@@ -1,4 +1,5 @@
 using Movie.Domain;
+using MovieTag.Domain;
 using Tag.Domain;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,7 +12,8 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<ITagService, TagService>();
 builder.Services.AddTransient<IMovieService, MovieService>();
-//
+builder.Services.AddTransient<IMovieTagService, MovieTagService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
