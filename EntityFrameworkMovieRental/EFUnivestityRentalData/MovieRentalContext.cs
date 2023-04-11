@@ -66,6 +66,7 @@ namespace EFUnivestityRentalData
             modelBuilder.ApplyConfiguration(new MovieConfiguration() );
             modelBuilder.ApplyConfiguration(new TagConfiguration() );
             modelBuilder.ApplyConfiguration(new MovieTagConfiguration() );
+            modelBuilder.ApplyConfiguration(new UserConfiguration() );
 
         }
 
@@ -73,5 +74,10 @@ namespace EFUnivestityRentalData
         public DbSet<Movie> Movies { get; set; }  //set or rules of reading a table
         public DbSet<Tag> Tags { get; set; }  //set or rules of reading a table
         public DbSet<MovieTag> MovieTags { get; set; }  //set or rules of reading a table
+        public DbSet<User> Users { get; set; }
+        public DbSet<Rent> Rents { get; set; }
+        public DbSet<Sell> Sells { get; set; }
+
+
     }
 }
