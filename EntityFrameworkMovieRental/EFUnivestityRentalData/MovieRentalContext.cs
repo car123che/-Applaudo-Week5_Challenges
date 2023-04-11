@@ -12,6 +12,47 @@ namespace EFUnivestityRentalData
     public class MovieRentalContext: DbContext
     {
 
+        public override int SaveChanges()
+        {
+            //How to intercept what is going to be saved and manipulate it
+            var entries = ChangeTracker.Entries().Where(q => q.State == EntityState.Added || q.State == EntityState.Modified); // This returns an Inumerable
+
+            foreach (var item in entries)
+            {
+                var auditableObject = (BaseDomain)item.Entity;
+
+                if (item.State == EntityState.Added)
+                    auditableObject.CreatedDate = DateTime.Now.ToString();
+
+                if (item.State == EntityState.Modified)
+                    auditableObject.UpdatedDate = DateTime.Now.ToString();
+
+            }
+
+            return base.SaveChanges();
+        }
+
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            //How to intercept what is going to be saved and manipulate it
+            var entries = ChangeTracker.Entries().Where(q => q.State == EntityState.Added || q.State == EntityState.Modified); // This returns an Inumerable
+
+            foreach (var item in entries)
+            {
+                var auditableObject = (BaseDomain)item.Entity;
+
+                if (item.State == EntityState.Added)
+                    auditableObject.CreatedDate = DateTime.Now.ToString();
+
+                if(item.State == EntityState.Modified)
+                    auditableObject.UpdatedDate = DateTime.Now.ToString();
+
+            }
+
+            return base.SaveChangesAsync(cancellationToken);
+        }
+
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=LAPTOP-KAP3NP1H; Initial Catalog=MovieRental; persist security info=True; Integrated Security=SSPI;")
