@@ -55,7 +55,7 @@ namespace EntityFrameworkMovieRental
             }*/
         }
 
-        private static async Task QueryFilter()
+       /* private static async Task QueryFilter()
         {
             var movies = await context.Movies.Where(e => e.Title.Contains("n")).ToListAsync();
 
@@ -106,7 +106,7 @@ namespace EntityFrameworkMovieRental
         {
             var tag = await context.Tags.FindAsync(Id);
             return tag;
-        }
+        }*/
 
 
 

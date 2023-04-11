@@ -9,9 +9,9 @@ namespace MoviRentalApi.Controllers
     [Route("[controller]")]
     public class TagController : ControllerBase
     {
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<TagController> _logger;
         private readonly ITagService  _tagService;
-        public TagController(ILogger<WeatherForecastController> logger, ITagService tagService)
+        public TagController(ILogger<TagController> logger, ITagService tagService)
         {
             _logger = logger;
             _tagService = tagService;
@@ -24,7 +24,7 @@ namespace MoviRentalApi.Controllers
             return tags;
         }
 
-        [HttpGet("/{Id}")]
+        [HttpGet("{Id}")]
         public async Task<EFMovieRentalDomain.Tag> Get(int Id)
         {
             var tag = await _tagService.Get(Id);
