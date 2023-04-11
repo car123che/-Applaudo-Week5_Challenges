@@ -1,10 +1,12 @@
-﻿using System.Net;
+﻿using Movie.Domain.Exceptions;
+using System.Net;
 using Tag.Domain.Exceptions;
 
 namespace MoviRentalApi
 {
     public class ExceptionHandlingMiddleware : IMiddleware
     {
+        
         public async Task InvokeAsync(HttpContext context, RequestDelegate next)
         {
             try
@@ -12,6 +14,11 @@ namespace MoviRentalApi
                 await next(context);
             }
             catch( TagNotFoundException ex)
+            {
+                context.Response.StatusCode = (int)HttpStatusCode.NotFound;
+                await context.Response.WriteAsync(ex.Message);
+            }
+            catch( MovieNotFoundException ex)
             {
                 context.Response.StatusCode = (int)HttpStatusCode.NotFound;
                 await context.Response.WriteAsync(ex.Message);

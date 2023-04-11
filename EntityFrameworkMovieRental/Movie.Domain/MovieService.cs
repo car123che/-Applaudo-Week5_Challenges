@@ -1,5 +1,6 @@
 ﻿using EFUnivestityRentalData;
 using Microsoft.EntityFrameworkCore;
+using Movie.Domain.Exceptions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,6 +25,12 @@ namespace Movie.Domain
         public async Task<string> Delete(int Id)
         {
             var movie = await context.Movies.FindAsync(Id);
+
+            if (movie is null)
+            {
+                throw new MovieNotFoundException($"Movie {Id} - Not Found");
+            }
+
             context.Movies.Remove(movie);
             await context.SaveChangesAsync();
 
@@ -39,6 +46,12 @@ namespace Movie.Domain
         public async Task<EFMovieRentalDomain.Movie> Get(int Id)
         {
             var movie = await context.Movies.FindAsync(Id);
+
+            if( movie is null)
+            {
+                throw new MovieNotFoundException($"Movie {Id} - Not Found");
+            }
+
             return movie;
         }
 
@@ -54,6 +67,12 @@ namespace Movie.Domain
         public async Task<string> Update(int Id, EFMovieRentalDomain.Movie newMovie)
         {
             var movie = await context.Movies.FindAsync(Id);
+
+            if (movie is null)
+            {
+                throw new MovieNotFoundException($"Movie {Id} - Not Found");
+            }
+
             movie.Title = newMovie.Title;
             movie.Description = newMovie.Description;
             movie.PosterStock = newMovie.PosterStock;
