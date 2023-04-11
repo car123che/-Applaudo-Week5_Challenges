@@ -3,11 +3,19 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33516.290
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntityFrameworkMovieRental", "EntityFrameworkMovieRental\EntityFrameworkMovieRental.csproj", "{7344D2C0-086E-4901-909A-0648FD0E724C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EntityFrameworkMovieRental", "EntityFrameworkMovieRental\EntityFrameworkMovieRental.csproj", "{7344D2C0-086E-4901-909A-0648FD0E724C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFMovieRentalDomain", "EFMovieRentalDomain\EFMovieRentalDomain.csproj", "{D928B111-0C77-4B73-80C1-0AF7BB222F89}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFMovieRentalDomain", "EFMovieRentalDomain\EFMovieRentalDomain.csproj", "{D928B111-0C77-4B73-80C1-0AF7BB222F89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EFUnivestityRentalData", "EFUnivestityRentalData\EFUnivestityRentalData.csproj", "{D08A1647-A687-43B9-8AFE-0A07CE87B2FA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFUnivestityRentalData", "EFUnivestityRentalData\EFUnivestityRentalData.csproj", "{D08A1647-A687-43B9-8AFE-0A07CE87B2FA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tag.Domain", "Tag.Domain\Tag.Domain.csproj", "{41B33584-2988-4846-AA92-99B2832054F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Movie.Domain", "Movie.Domain\Movie.Domain.csproj", "{AC1DB4B0-3785-4103-A56B-D0C2A5B49D41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieTag.Domain", "MovieTag.Domain\MovieTag.Domain.csproj", "{8A031AB4-0B0D-4129-91ED-3AF18E5CE4CF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MoviRentalApi", "MoviRentalApi\MoviRentalApi.csproj", "{D54A6C8C-C31C-403E-80DE-9AED396ABE88}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +35,22 @@ Global
 		{D08A1647-A687-43B9-8AFE-0A07CE87B2FA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D08A1647-A687-43B9-8AFE-0A07CE87B2FA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D08A1647-A687-43B9-8AFE-0A07CE87B2FA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41B33584-2988-4846-AA92-99B2832054F2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41B33584-2988-4846-AA92-99B2832054F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41B33584-2988-4846-AA92-99B2832054F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41B33584-2988-4846-AA92-99B2832054F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AC1DB4B0-3785-4103-A56B-D0C2A5B49D41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC1DB4B0-3785-4103-A56B-D0C2A5B49D41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC1DB4B0-3785-4103-A56B-D0C2A5B49D41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC1DB4B0-3785-4103-A56B-D0C2A5B49D41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A031AB4-0B0D-4129-91ED-3AF18E5CE4CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A031AB4-0B0D-4129-91ED-3AF18E5CE4CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A031AB4-0B0D-4129-91ED-3AF18E5CE4CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A031AB4-0B0D-4129-91ED-3AF18E5CE4CF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D54A6C8C-C31C-403E-80DE-9AED396ABE88}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D54A6C8C-C31C-403E-80DE-9AED396ABE88}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D54A6C8C-C31C-403E-80DE-9AED396ABE88}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D54A6C8C-C31C-403E-80DE-9AED396ABE88}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

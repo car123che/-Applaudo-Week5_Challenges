@@ -6,12 +6,13 @@ using System.Threading.Tasks;
 
 namespace EFMovieRentalDomain
 {
-    public class MovieTag: BaseDomain
+    public class Sell: BaseDomain
     {
         public int MovieId { get; set; }
-        public int TagId { get; set; }
+        public int UserId { get; set; }
 
-        public virtual Movie Movie { get; set; } 
-        public virtual Tag Tag { get; set; }
+        public virtual Movie Movie { get; set; }
+        public virtual User User { get; set; }
+
     }
 }
