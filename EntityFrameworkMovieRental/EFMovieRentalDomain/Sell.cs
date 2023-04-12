@@ -10,7 +10,7 @@ namespace EFMovieRentalDomain
     {
         public int MovieId { get; set; }
         public int UserId { get; set; }
-
+        public string SellDate { get; set; }
         public virtual Movie Movie { get; set; }
         public virtual User User { get; set; }
 

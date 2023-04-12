@@ -4,15 +4,14 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using EFMovieRentalDomain;
 using EFUnivestityRentalData;
 using Microsoft.EntityFrameworkCore;
 using EFMovieRentalDomain.Models;
 
-namespace MovieTag.Domain
+namespace MovieRental.Domain
 {
 
-    public interface IMovieTagService
+    public interface IMovieTagRepository
     {
         Task<string> Post(int movieId, int tagId);
         Task<string> Delete(int movieId, int tagId);
@@ -22,7 +21,7 @@ namespace MovieTag.Domain
     }
 
 
-    public class MovieTagService : IMovieTagService
+    public class MovieTagRepository : IMovieTagRepository
     {
         private static MovieRentalContext context = new MovieRentalContext();
 

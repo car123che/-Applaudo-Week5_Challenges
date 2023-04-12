@@ -1,8 +1,7 @@
 ﻿using EFMovieRentalDomain.Models;
 using Microsoft.AspNetCore.Mvc;
-using MovieTag.Domain;
+using MovieRental.Domain;
 using MoviRentalApi.Models;
-using Tag.Domain;
 
 namespace MoviRentalApi.Controllers
 {
@@ -11,9 +10,9 @@ namespace MoviRentalApi.Controllers
     public class MovieTagController : ControllerBase
     {
         private readonly ILogger<MovieTagController> _logger;
-        private readonly IMovieTagService _movieTagService;
+        private readonly IMovieTagRepository _movieTagService;
 
-        public MovieTagController(ILogger<MovieTagController> logger, IMovieTagService movieTagService)
+        public MovieTagController(ILogger<MovieTagController> logger, IMovieTagRepository movieTagService)
         {
             _logger = logger;
             _movieTagService = movieTagService;

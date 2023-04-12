@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using MoviRentalApi.Models;
 using System.Xml.Linq;
-using Tag.Domain;
+using MovieRental.Domain;
 
 namespace MoviRentalApi.Controllers
 {
@@ -10,8 +10,8 @@ namespace MoviRentalApi.Controllers
     public class TagController : ControllerBase
     {
         private readonly ILogger<TagController> _logger;
-        private readonly ITagService  _tagService;
-        public TagController(ILogger<TagController> logger, ITagService tagService)
+        private readonly ITagRepository  _tagService;
+        public TagController(ILogger<TagController> logger, ITagRepository tagService)
         {
             _logger = logger;
             _tagService = tagService;
