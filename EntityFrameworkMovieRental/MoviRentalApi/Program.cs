@@ -14,6 +14,7 @@ builder.Services.AddTransient<IMovieRepository, MovieRepository>();
 builder.Services.AddTransient<IMovieTagRepository, MovieTagRepository>();
 builder.Services.AddTransient<IUserRepository, UserRepository>();
 builder.Services.AddTransient<IRentRepository, RentRepository>();
+builder.Services.AddTransient<ISellRepository, SellRepository>();
 
 
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
