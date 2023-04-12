@@ -12,6 +12,10 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddTransient<ITagRepository, TagRepository>();
 builder.Services.AddTransient<IMovieRepository, MovieRepository>();
 builder.Services.AddTransient<IMovieTagRepository, MovieTagRepository>();
+builder.Services.AddTransient<IUserRepository, UserRepository>();
+builder.Services.AddTransient<IRentRepository, RentRepository>();
+
+
 builder.Services.AddTransient<ExceptionHandlingMiddleware>();
 
 var app = builder.Build();
