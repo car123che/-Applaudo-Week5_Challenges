@@ -11,9 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Movie.Domain\Movie.Domain.csproj" />
-    <ProjectReference Include="..\MovieTag.Domain\MovieTag.Domain.csproj" />
-    <ProjectReference Include="..\Tag.Domain\Tag.Domain.csproj" />
+    <ProjectReference Include="..\MovieRental.Domain\MovieRental.Domain.csproj" />
   </ItemGroup>
 
 </Project>
